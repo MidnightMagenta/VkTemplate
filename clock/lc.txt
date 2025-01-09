@@ -1,0 +1,21 @@
+-Directories
+include/
+src/
+shaders/
+
+-Extensions
+.h
+.hpp
+.cpp
+.frag
+.vert
+
+-Executables
+VK_Tutorial-triangle.exe
+
+-Tools
+devenv.exe
+blender.exe
+
+-Keywords
+VK Tutorial
