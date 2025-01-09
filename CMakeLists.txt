@@ -8,6 +8,10 @@ project("${ProjectName}" VERSION 0.1)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /EHsc")
 
+if (NOT DEFINED ENV{VULKAN_SDK})
+    message(FATAL_ERROR "VULKAN_SDK is not set.")
+endif()
+
 add_custom_target(compile_shaders ALL
     COMMENT "Compiling shaders"
     COMMAND "${PROJECT_SOURCE_DIR}/shaders/compile.bat"
@@ -37,10 +41,6 @@ target_include_directories("${ProjectName}" PUBLIC
     "${CMAKE_SOURCE_DIR}/dependencies/glm" 
     "C:/VulkanSDK/1.3.296.0/Include"
 )
-
-if (NOT DEFINED ENV{VULKAN_SDK})
-    message(FATAL_ERROR "VULKAN_SDK is not set.")
-endif()
 
 target_link_libraries("${ProjectName}" PUBLIC 
     "$ENV{VULKAN_SDK}/Lib/vulkan-1.lib"
