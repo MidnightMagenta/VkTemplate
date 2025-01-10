@@ -12,6 +12,8 @@ if (NOT DEFINED ENV{VULKAN_SDK})
     message(FATAL_ERROR "VULKAN_SDK is not set.")
 endif()
 
+add_subdirectory("${CMAKE_SOURCE_DIR}/dependencies/vma")
+
 add_custom_target(compile_shaders ALL
     COMMENT "Compiling shaders"
     COMMAND "${PROJECT_SOURCE_DIR}/shaders/compile.bat"
