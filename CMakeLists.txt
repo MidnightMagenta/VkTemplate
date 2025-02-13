@@ -41,7 +41,7 @@ add_dependencies("${ProjectName}" compile_shaders q_start_clock)
 
 target_include_directories("${ProjectName}" PUBLIC 
     "${CMAKE_SOURCE_DIR}/dependencies/glm" 
-    "C:/VulkanSDK/1.3.296.0/Include"
+    "$ENV{VULKAN_SDK}/Include"
 )
 
 target_link_libraries("${ProjectName}" PUBLIC 
